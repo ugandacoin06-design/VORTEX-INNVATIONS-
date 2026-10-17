@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-heading: "Outfit", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-vortex-navy: #0A1128;
+  --color-vortex-blue: #1A56DB;
+  --color-vortex-teal: #14B8A6;
+  --color-vortex-turquoise: #06B6D4;
+}
