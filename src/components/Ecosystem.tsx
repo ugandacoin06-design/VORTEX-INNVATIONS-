@@ -1,24 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Blocks, 
   Globe2, 
   Cpu, 
   ArrowRight, 
-  Layers, 
   ExternalLink, 
   Sparkles, 
   CheckCircle2, 
-  Clock, 
-  Compass, 
-  ShieldCheck,
-  Building2,
   HeartHandshake,
   Network
 } from 'lucide-react';
 
 export function Ecosystem() {
-  const [activeModal, setActiveModal] = useState<string | null>(null);
-
   const ecosystemEntities = [
     {
       id: "moneta-chain",
@@ -31,7 +24,9 @@ export function Ecosystem() {
       borderColor: "border-[#2dd4bf]/30 hover:border-[#2dd4bf]/60",
       accentColor: "#2dd4bf",
       btnText: "VISIT MONETA CHAIN →",
-      statusNote: "Official website link coming soon.",
+      url: "https://moneta-chain.vercel.app/",
+      displayUrl: "moneta-chain.vercel.app",
+      statusNote: "Live Official Website",
       highlights: [
         "Programmable decentralized architecture",
         "High-throughput transactional validation",
@@ -50,7 +45,9 @@ export function Ecosystem() {
       borderColor: "border-[#3b82f6]/30 hover:border-[#3b82f6]/60",
       accentColor: "#3b82f6",
       btnText: "VISIT MONETA GLOBAL FOUNDATION →",
-      statusNote: "Official website link coming soon.",
+      url: "https://moneta-globle-foundation.vercel.app",
+      displayUrl: "moneta-globle-foundation.vercel.app",
+      statusNote: "Live Official Website",
       highlights: [
         "Grassroots community empowerment programs",
         "Digital literacy & technological inclusion",
@@ -67,30 +64,31 @@ export function Ecosystem() {
       role: "Core Technology & R&D Parent Company",
       icon: <Cpu className="w-6 h-6 text-[#2dd4bf]" />,
       status: "Active Platform",
-      statusColor: "text-[#2dd4bf] bg-[#2dd4bf]/10 border-[#2dd4bf]/20"
+      statusColor: "text-[#2dd4bf] bg-[#2dd4bf]/10 border-[#2dd4bf]/20",
+      url: "/#about-us",
+      isExternal: false
     },
     {
       entity: "MONETA CHAIN",
       domain: "Blockchain Infrastructure",
       role: "Distributed Ledger & Web3 Ecosystem",
-      icon: <Network className="w-6 h-6 text-[#3b82f6]" />,
-      status: "Coming Soon",
-      statusColor: "text-[#3b82f6] bg-[#3b82f6]/10 border-[#3b82f6]/20"
+      icon: <Network className="w-6 h-6 text-[#2dd4bf]" />,
+      status: "Live Official Portal",
+      statusColor: "text-[#2dd4bf] bg-[#2dd4bf]/10 border-[#2dd4bf]/20",
+      url: "https://moneta-chain.vercel.app/",
+      isExternal: true
     },
     {
       entity: "MONETA GLOBAL FOUNDATION",
       domain: "Global Impact & Community",
       role: "Social Impact & Community Initiatives",
-      icon: <Globe2 className="w-6 h-6 text-purple-400" />,
-      status: "Coming Soon",
-      statusColor: "text-purple-400 bg-purple-400/10 border-purple-400/20"
+      icon: <Globe2 className="w-6 h-6 text-[#3b82f6]" />,
+      status: "Live Official Portal",
+      statusColor: "text-[#3b82f6] bg-[#3b82f6]/10 border-[#3b82f6]/20",
+      url: "https://moneta-globle-foundation.vercel.app",
+      isExternal: true
     }
   ];
-
-  const handleLinkClick = (e: React.MouseEvent, title: string) => {
-    e.preventDefault();
-    setActiveModal(title);
-  };
 
   return (
     <section id="ecosystem" className="py-28 relative bg-[#060b1a] overflow-hidden border-t border-white/5">
@@ -163,17 +161,25 @@ export function Ecosystem() {
 
               {/* Action Button & Note */}
               <div className="relative z-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <button
-                  onClick={(e) => handleLinkClick(e, entity.title)}
+                <a
+                  href={entity.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 bg-white text-[#0a1128] hover:bg-[#2dd4bf] hover:text-[#060b1a] font-bold tracking-widest uppercase text-xs px-6 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(45,212,191,0.4)] group-hover:translate-x-1"
                 >
                   <span>{entity.btnText}</span>
-                </button>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
                 
-                <div className="flex items-center gap-2 text-xs font-medium text-white/50">
-                  <Clock className="w-3.5 h-3.5 text-[#3b82f6]" />
-                  <span>{entity.statusNote}</span>
-                </div>
+                <a
+                  href={entity.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-xs font-semibold text-white/70 hover:text-[#2dd4bf] transition-colors"
+                >
+                  <Globe2 className="w-3.5 h-3.5 text-[#2dd4bf]" />
+                  <span className="underline decoration-white/20 underline-offset-4">{entity.displayUrl}</span>
+                </a>
               </div>
             </div>
           ))}
@@ -202,9 +208,12 @@ export function Ecosystem() {
             {/* Links Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {officialLinks.map((item, idx) => (
-                <div 
+                <a
                   key={idx}
-                  className="rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-white/20 p-6 transition-all duration-300 flex flex-col justify-between group"
+                  href={item.url}
+                  target={item.isExternal ? "_blank" : undefined}
+                  rel={item.isExternal ? "noopener noreferrer" : undefined}
+                  className="rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-[#2dd4bf]/50 p-6 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
@@ -228,10 +237,16 @@ export function Ecosystem() {
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-white/50 group-hover:text-white transition-colors">
-                    <span className="font-semibold tracking-wider uppercase text-[11px]">Ecosystem Member</span>
-                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    <span className="font-semibold tracking-wider uppercase text-[11px]">
+                      {item.isExternal ? "Visit Portal" : "Ecosystem Member"}
+                    </span>
+                    {item.isExternal ? (
+                      <ExternalLink className="w-4 h-4 transform group-hover:translate-x-1 group-hover:text-[#2dd4bf] transition-all" />
+                    ) : (
+                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    )}
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
@@ -247,41 +262,6 @@ export function Ecosystem() {
         </div>
 
       </div>
-
-      {/* Info Modal / Notification for "Coming Soon" */}
-      {activeModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#060b1a]/80 backdrop-blur-md">
-          <div className="bg-[#0a1128] border border-white/20 rounded-3xl p-8 max-w-md w-full text-center relative shadow-2xl animate-in fade-in zoom-in-95 duration-200">
-            <div className="w-14 h-14 rounded-2xl bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 flex items-center justify-center mx-auto mb-6 text-[#2dd4bf]">
-              <Compass className="w-7 h-7" />
-            </div>
-
-            <div className="text-xs font-bold tracking-widest text-[#2dd4bf] uppercase mb-2">
-              Official Portal
-            </div>
-            
-            <h4 className="text-xl font-black text-white uppercase tracking-wide mb-3 font-heading">
-              {activeModal}
-            </h4>
-
-            <p className="text-white/70 text-sm leading-relaxed mb-6">
-              The official portal for <strong className="text-white">{activeModal}</strong> is currently being finalized. The public release link will be accessible here soon.
-            </p>
-
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-white/60 mb-6 flex items-center justify-center gap-2">
-              <Clock className="w-4 h-4 text-[#3b82f6]" />
-              <span>Official website link coming soon.</span>
-            </div>
-
-            <button
-              onClick={() => setActiveModal(null)}
-              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#1e3a8a] to-[#2dd4bf] text-white font-bold tracking-widest uppercase text-xs hover:opacity-90 transition-opacity"
-            >
-              CLOSE
-            </button>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

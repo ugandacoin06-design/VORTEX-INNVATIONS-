@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   Blocks, BrainCircuit, TestTube2, ArrowRight, ArrowDown, 
   AlertTriangle, Box, Code, Server, ShieldCheck, Zap, 
-  Settings, Layers, Fingerprint, Sparkles, Activity
+  Settings, Layers, Fingerprint, Sparkles, Activity, ExternalLink
 } from 'lucide-react';
 
 export function Products() {
@@ -14,7 +14,8 @@ export function Products() {
       status: "UNDER DEVELOPMENT",
       statusColor: "text-[#3b82f6] bg-[#3b82f6]/10 border-[#3b82f6]/20",
       icon: <Blocks className="w-8 h-8" />,
-      linkText: "EXPLORE MONETA CHAIN →"
+      linkText: "EXPLORE MONETA CHAIN →",
+      linkUrl: "https://moneta-chain.vercel.app/"
     },
     {
       title: "VERA AI",
@@ -142,9 +143,21 @@ export function Products() {
                     STATUS: {product.status}
                   </div>
                   
-                  <button className="w-full text-left text-white/80 text-xs font-bold tracking-widest uppercase hover:text-[#3b82f6] transition-colors group-hover:translate-x-2 transform duration-300">
-                    {product.linkText}
-                  </button>
+                  {product.linkUrl ? (
+                    <a
+                      href={product.linkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-white/80 text-xs font-bold tracking-widest uppercase hover:text-[#2dd4bf] transition-colors group-hover:translate-x-2 transform duration-300"
+                    >
+                      <span>{product.linkText}</span>
+                      <ExternalLink className="w-3.5 h-3.5 text-[#2dd4bf]" />
+                    </a>
+                  ) : (
+                    <button className="w-full text-left text-white/80 text-xs font-bold tracking-widest uppercase hover:text-[#3b82f6] transition-colors group-hover:translate-x-2 transform duration-300">
+                      {product.linkText}
+                    </button>
+                  )}
                 </div>
               </div>
             ))}

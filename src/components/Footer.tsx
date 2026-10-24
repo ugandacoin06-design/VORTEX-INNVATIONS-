@@ -1,15 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
-import { Twitter, Linkedin, Github, Blocks, HeartHandshake, Cpu, Network, Globe2, Clock, Sparkles, Compass } from 'lucide-react';
+import { Twitter, Linkedin, Github, Blocks, HeartHandshake, Cpu, Network, Globe2, Sparkles, ExternalLink, ArrowRight } from 'lucide-react';
 
 export function Footer() {
-  const [activeModal, setActiveModal] = useState<string | null>(null);
-
-  const handleEcosystemClick = (e: React.MouseEvent, title: string) => {
-    e.preventDefault();
-    setActiveModal(title);
-  };
 
   return (
     <footer className="bg-[#0a1128] border-t border-white/5 text-white pt-24 pb-8 relative overflow-hidden">
@@ -145,16 +139,24 @@ export function Footer() {
                 </div>
 
                 <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <button
-                    onClick={(e) => handleEcosystemClick(e, "MONETA CHAIN")}
-                    className="inline-flex items-center justify-center bg-white text-[#0a1128] hover:bg-[#2dd4bf] hover:text-[#060b1a] font-bold tracking-widest uppercase px-6 py-3.5 rounded-xl text-xs transition-all shadow-md hover:shadow-[0_0_20px_rgba(45,212,191,0.4)]"
+                  <a
+                    href="https://moneta-chain.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-white text-[#0a1128] hover:bg-[#2dd4bf] hover:text-[#060b1a] font-bold tracking-widest uppercase px-6 py-3.5 rounded-xl text-xs transition-all shadow-md hover:shadow-[0_0_20px_rgba(45,212,191,0.4)]"
                   >
-                    VISIT MONETA CHAIN &rarr;
-                  </button>
-                  <div className="flex items-center gap-2 text-xs text-white/50">
-                    <Clock className="w-3.5 h-3.5 text-[#2dd4bf]" />
-                    <span>Official website link coming soon.</span>
-                  </div>
+                    <span>VISIT MONETA CHAIN &rarr;</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href="https://moneta-chain.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs text-white/60 hover:text-[#2dd4bf] transition-colors"
+                  >
+                    <Globe2 className="w-3.5 h-3.5 text-[#2dd4bf]" />
+                    <span className="underline decoration-white/20 underline-offset-4">moneta-chain.vercel.app</span>
+                  </a>
                 </div>
               </div>
 
@@ -182,16 +184,24 @@ export function Footer() {
                 </div>
 
                 <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <button
-                    onClick={(e) => handleEcosystemClick(e, "MONETA GLOBAL FOUNDATION")}
-                    className="inline-flex items-center justify-center bg-white text-[#0a1128] hover:bg-[#3b82f6] hover:text-white font-bold tracking-widest uppercase px-6 py-3.5 rounded-xl text-xs transition-all shadow-md hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+                  <a
+                    href="https://moneta-globle-foundation.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-white text-[#0a1128] hover:bg-[#3b82f6] hover:text-white font-bold tracking-widest uppercase px-6 py-3.5 rounded-xl text-xs transition-all shadow-md hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]"
                   >
-                    VISIT MONETA GLOBAL FOUNDATION &rarr;
-                  </button>
-                  <div className="flex items-center gap-2 text-xs text-white/50">
-                    <Clock className="w-3.5 h-3.5 text-[#3b82f6]" />
-                    <span>Official website link coming soon.</span>
-                  </div>
+                    <span>VISIT MONETA GLOBAL FOUNDATION &rarr;</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href="https://moneta-globle-foundation.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs text-white/60 hover:text-[#3b82f6] transition-colors"
+                  >
+                    <Globe2 className="w-3.5 h-3.5 text-[#3b82f6]" />
+                    <span className="underline decoration-white/20 underline-offset-4">moneta-globle-foundation.vercel.app</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -202,35 +212,57 @@ export function Footer() {
                 OFFICIAL ECOSYSTEM LINKS
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-4">
-                  <div className="p-2 rounded-lg bg-white/5 text-[#2dd4bf]">
-                    <Cpu className="w-5 h-5" />
+                <a 
+                  href="/#about-us"
+                  className="p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 hover:border-white/20 flex items-center justify-between transition-all group"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 rounded-lg bg-white/5 text-[#2dd4bf] group-hover:scale-110 transition-transform">
+                      <Cpu className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-black text-white tracking-wider uppercase group-hover:text-[#2dd4bf] transition-colors">VORTEX INNOVATIONS</div>
+                      <div className="text-xs text-white/50">Technology & Innovation</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-sm font-black text-white tracking-wider uppercase">VORTEX INNOVATIONS</div>
-                    <div className="text-xs text-white/50">Technology & Innovation</div>
-                  </div>
-                </div>
+                  <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[#2dd4bf] group-hover:translate-x-1 transition-all" />
+                </a>
 
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-4">
-                  <div className="p-2 rounded-lg bg-white/5 text-[#3b82f6]">
-                    <Network className="w-5 h-5" />
+                <a
+                  href="https://moneta-chain.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-[#2dd4bf]/30 hover:border-[#2dd4bf] flex items-center justify-between transition-all group cursor-pointer"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 rounded-lg bg-white/5 text-[#2dd4bf] group-hover:scale-110 transition-transform">
+                      <Network className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-black text-white tracking-wider uppercase group-hover:text-[#2dd4bf] transition-colors">MONETA CHAIN</div>
+                      <div className="text-xs text-white/50">Blockchain Infrastructure</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-sm font-black text-white tracking-wider uppercase">MONETA CHAIN</div>
-                    <div className="text-xs text-white/50">Blockchain Infrastructure</div>
-                  </div>
-                </div>
+                  <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-[#2dd4bf] group-hover:translate-x-1 transition-all" />
+                </a>
 
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-4">
-                  <div className="p-2 rounded-lg bg-white/5 text-purple-400">
-                    <Globe2 className="w-5 h-5" />
+                <a
+                  href="https://moneta-globle-foundation.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-[#3b82f6]/30 hover:border-[#3b82f6] flex items-center justify-between transition-all group cursor-pointer"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 rounded-lg bg-white/5 text-[#3b82f6] group-hover:scale-110 transition-transform">
+                      <Globe2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-black text-white tracking-wider uppercase group-hover:text-[#3b82f6] transition-colors">MONETA GLOBAL FOUNDATION</div>
+                      <div className="text-xs text-white/50">Global Impact & Community</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-sm font-black text-white tracking-wider uppercase">MONETA GLOBAL FOUNDATION</div>
-                    <div className="text-xs text-white/50">Global Impact & Community</div>
-                  </div>
-                </div>
+                  <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-[#3b82f6] group-hover:translate-x-1 transition-all" />
+                </a>
               </div>
             </div>
 
@@ -273,41 +305,6 @@ export function Footer() {
         </div>
 
       </div>
-
-      {/* Info Modal */}
-      {activeModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#060b1a]/80 backdrop-blur-md">
-          <div className="bg-[#0a1128] border border-white/20 rounded-3xl p-8 max-w-md w-full text-center relative shadow-2xl animate-in fade-in zoom-in-95 duration-200">
-            <div className="w-14 h-14 rounded-2xl bg-[#2dd4bf]/10 border border-[#2dd4bf]/30 flex items-center justify-center mx-auto mb-6 text-[#2dd4bf]">
-              <Compass className="w-7 h-7" />
-            </div>
-
-            <div className="text-xs font-bold tracking-widest text-[#2dd4bf] uppercase mb-2">
-              Official Portal
-            </div>
-            
-            <h4 className="text-xl font-black text-white uppercase tracking-wide mb-3 font-heading">
-              {activeModal}
-            </h4>
-
-            <p className="text-white/70 text-sm leading-relaxed mb-6">
-              The official website for <strong className="text-white">{activeModal}</strong> is currently being prepared for deployment.
-            </p>
-
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-white/60 mb-6 flex items-center justify-center gap-2">
-              <Clock className="w-4 h-4 text-[#3b82f6]" />
-              <span>Official website link coming soon.</span>
-            </div>
-
-            <button
-              onClick={() => setActiveModal(null)}
-              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#1e3a8a] to-[#2dd4bf] text-white font-bold tracking-widest uppercase text-xs hover:opacity-90 transition-opacity"
-            >
-              CLOSE
-            </button>
-          </div>
-        </div>
-      )}
     </footer>
   );
 }
