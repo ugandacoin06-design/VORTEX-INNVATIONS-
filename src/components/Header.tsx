@@ -93,7 +93,17 @@ export function Header() {
           ))}
         </nav>
 
-        <button className="hidden xl:flex items-center justify-center bg-gradient-to-r from-[#1e3a8a] to-[#2dd4bf] px-6 py-2.5 text-white text-[12px] font-bold tracking-widest uppercase rounded-full hover:opacity-90 shadow-[0_0_20px_rgba(45,212,191,0.3)] transition-all duration-300">
+        <button 
+          onClick={() => {
+            const element = document.getElementById('contact');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            } else {
+              window.location.hash = '#contact';
+            }
+          }}
+          className="hidden xl:flex items-center justify-center bg-gradient-to-r from-[#1677FF] via-[#3b82f6] to-[#2dd4bf] px-6 py-2.5 text-white text-[12px] font-bold tracking-widest uppercase rounded-full hover:opacity-95 shadow-[0_0_20px_rgba(22,119,255,0.3)] hover:shadow-[0_0_25px_rgba(45,212,191,0.4)] transition-all duration-300"
+        >
           GET STARTED
         </button>
 
@@ -124,7 +134,18 @@ export function Header() {
                 {name}
               </a>
             ))}
-            <button className="mt-4 w-full flex items-center justify-center bg-gradient-to-r from-[#1e3a8a] to-[#2dd4bf] px-6 py-4 text-white text-[12px] font-bold tracking-widest uppercase rounded-full">
+            <button 
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                const element = document.getElementById('contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.hash = '#contact';
+                }
+              }}
+              className="mt-4 w-full flex items-center justify-center bg-gradient-to-r from-[#1677FF] via-[#3b82f6] to-[#2dd4bf] px-6 py-4 text-white text-[12px] font-bold tracking-widest uppercase rounded-full shadow-[0_0_20px_rgba(22,119,255,0.3)]"
+            >
               GET STARTED
             </button>
           </nav>
