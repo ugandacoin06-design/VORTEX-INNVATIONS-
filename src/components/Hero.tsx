@@ -107,7 +107,7 @@ export function Hero() {
           <div className="lg:col-span-4 flex flex-col gap-6 justify-between contents lg:flex">
 
             {/* BLOCK B: Main Headline & Introductory Content */}
-            <div className="order-1 lg:order-none bg-[#15171A] border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-xl">
+            <div className="order-1 lg:order-none bg-[#15171A] border border-white/10 rounded-2xl p-5 sm:p-8 flex flex-col justify-between shadow-xl">
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#2dd4bf]" />
@@ -286,36 +286,36 @@ export function Hero() {
               Occupies ~42-45% of desktop grid width, spanning vertically
               full height across the grid rows.
              ======================================================== */}
-          <div className="order-2 lg:order-none lg:col-span-5 bg-gradient-to-b from-[#15171A] via-[#101216] to-[#0c0e12] border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group min-h-[580px] lg:min-h-full">
+          <div className="order-2 lg:order-none lg:col-span-5 bg-gradient-to-b from-[#15171A] via-[#101216] to-[#0c0e12] border border-white/10 rounded-2xl p-5 sm:p-7 lg:p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group min-h-[460px] sm:min-h-[540px] lg:min-h-full">
             {/* Background Core Glows */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-tr from-[#1677FF]/20 via-[#2dd4bf]/20 to-[#6D28D9]/20 rounded-full blur-[70px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-80 h-72 sm:h-80 bg-gradient-to-tr from-[#1677FF]/20 via-[#2dd4bf]/20 to-[#6D28D9]/20 rounded-full blur-[70px] pointer-events-none" />
 
             {/* Dominant Visual Header Status Bar */}
             <div className="relative z-10 flex items-center justify-between pb-4 border-b border-white/10">
               <div className="flex items-center gap-2.5">
                 <div className="w-2.5 h-2.5 rounded-full bg-[#2dd4bf]" />
-                <span className="text-xs font-bold tracking-widest uppercase text-white font-mono">
+                <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-white font-mono">
                   CENTRAL ARCHITECTURE CORE
                 </span>
               </div>
-              <span className="text-[11px] font-mono text-white/50">
+              <span className="text-[10px] sm:text-[11px] font-mono text-white/50">
                 NODE_GRID: ONLINE
               </span>
             </div>
 
             {/* Central Dominant Visual Engine Graphic */}
-            <div className="relative z-10 my-auto py-8 sm:py-12 flex flex-col items-center justify-center">
-              <div className="w-full max-w-[420px] aspect-square relative flex items-center justify-center">
+            <div className="relative z-10 my-auto py-6 sm:py-10 flex flex-col items-center justify-center">
+              <div className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[420px] aspect-square relative flex items-center justify-center">
                 
                 {/* Layer 1: Outer Rotating Gradient Ring */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#1677FF]/20 via-transparent to-[#2dd4bf]/20 rounded-full animate-[spin_24s_linear_infinite]" />
                 
                 {/* Layer 2: Dashed Gyro Ring */}
-                <div className="absolute inset-5 border border-[#2dd4bf]/30 rounded-full border-dashed animate-[spin_32s_linear_infinite_reverse]" />
+                <div className="absolute inset-4 sm:inset-5 border border-[#2dd4bf]/30 rounded-full border-dashed animate-[spin_32s_linear_infinite_reverse]" />
                 
                 {/* Layer 3: Solid Concentric Ring */}
-                <div className="absolute inset-14 border border-[#1677FF]/25 rounded-full" />
-                <div className="absolute inset-24 border border-white/10 rounded-full" />
+                <div className="absolute inset-10 sm:inset-14 border border-[#1677FF]/25 rounded-full" />
+                <div className="absolute inset-18 sm:inset-24 border border-white/10 rounded-full" />
 
                 {/* SVG Constellation & Vector Paths */}
                 <svg viewBox="0 0 400 400" className="w-full h-full relative z-10 drop-shadow-[0_0_35px_rgba(45,212,191,0.25)]">
@@ -380,19 +380,19 @@ export function Hero() {
                 {/* 1. Infrastructure Beacon (Top-Right) */}
                 <button
                   onClick={() => setActiveSubsystem('infrastructure')}
-                  className={`absolute -top-3 sm:top-2 -right-2 sm:right-0 p-3 sm:p-3.5 rounded-xl border backdrop-blur-md transition-all duration-300 text-left z-20 shadow-lg ${
+                  className={`absolute -top-1 sm:top-2 -right-1 sm:right-0 p-2 sm:p-3.5 rounded-xl border backdrop-blur-md transition-all duration-300 text-left z-20 shadow-lg ${
                     activeSubsystem === 'infrastructure' 
                       ? 'bg-[#15171A] border-[#1677FF] ring-2 ring-[#1677FF]/40 scale-105' 
                       : 'bg-[#15171A]/85 border-white/10 hover:border-white/30'
                   }`}
                 >
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-[#1677FF]/20 flex items-center justify-center text-[#1677FF]">
-                      <Network className="w-4 h-4" />
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#1677FF]/20 flex items-center justify-center text-[#1677FF] shrink-0">
+                      <Network className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                     <div>
-                      <div className="text-[10px] font-bold text-white/50 tracking-wider uppercase font-mono">INFRASTRUCTURE</div>
-                      <div className="text-xs font-bold text-white">Secure & Scalable</div>
+                      <div className="text-[9px] sm:text-[10px] font-bold text-white/50 tracking-wider uppercase font-mono">INFRASTRUCTURE</div>
+                      <div className="text-[11px] sm:text-xs font-bold text-white leading-tight">Secure & Scalable</div>
                     </div>
                   </div>
                 </button>
@@ -400,19 +400,19 @@ export function Hero() {
                 {/* 2. Intelligence Beacon (Top-Left) */}
                 <button
                   onClick={() => setActiveSubsystem('intelligence')}
-                  className={`absolute -top-3 sm:top-2 -left-2 sm:left-0 p-3 sm:p-3.5 rounded-xl border backdrop-blur-md transition-all duration-300 text-left z-20 shadow-lg ${
+                  className={`absolute -top-1 sm:top-2 -left-1 sm:left-0 p-2 sm:p-3.5 rounded-xl border backdrop-blur-md transition-all duration-300 text-left z-20 shadow-lg ${
                     activeSubsystem === 'intelligence' 
                       ? 'bg-[#15171A] border-[#2dd4bf] ring-2 ring-[#2dd4bf]/40 scale-105' 
                       : 'bg-[#15171A]/85 border-white/10 hover:border-white/30'
                   }`}
                 >
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-[#2dd4bf]/20 flex items-center justify-center text-[#2dd4bf]">
-                      <BrainCircuit className="w-4 h-4" />
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#2dd4bf]/20 flex items-center justify-center text-[#2dd4bf] shrink-0">
+                      <BrainCircuit className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                     <div>
-                      <div className="text-[10px] font-bold text-white/50 tracking-wider uppercase font-mono">INTELLIGENCE</div>
-                      <div className="text-xs font-bold text-white">VERA AI Systems</div>
+                      <div className="text-[9px] sm:text-[10px] font-bold text-white/50 tracking-wider uppercase font-mono">INTELLIGENCE</div>
+                      <div className="text-[11px] sm:text-xs font-bold text-white leading-tight">VERA AI Systems</div>
                     </div>
                   </div>
                 </button>
@@ -420,19 +420,19 @@ export function Hero() {
                 {/* 3. Blockchain Beacon (Bottom-Right) */}
                 <button
                   onClick={() => setActiveSubsystem('blockchain')}
-                  className={`absolute -bottom-3 sm:bottom-2 -right-2 sm:right-0 p-3 sm:p-3.5 rounded-xl border backdrop-blur-md transition-all duration-300 text-left z-20 shadow-lg ${
+                  className={`absolute -bottom-1 sm:bottom-2 -right-1 sm:right-0 p-2 sm:p-3.5 rounded-xl border backdrop-blur-md transition-all duration-300 text-left z-20 shadow-lg ${
                     activeSubsystem === 'blockchain' 
                       ? 'bg-[#15171A] border-[#6D28D9] ring-2 ring-[#6D28D9]/40 scale-105' 
                       : 'bg-[#15171A]/85 border-white/10 hover:border-white/30'
                   }`}
                 >
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-[#6D28D9]/20 flex items-center justify-center text-[#a78bfa]">
-                      <Blocks className="w-4 h-4" />
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#6D28D9]/20 flex items-center justify-center text-[#a78bfa] shrink-0">
+                      <Blocks className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                     <div>
-                      <div className="text-[10px] font-bold text-white/50 tracking-wider uppercase font-mono">BLOCKCHAIN</div>
-                      <div className="text-xs font-bold text-white">MONETA CHAIN</div>
+                      <div className="text-[9px] sm:text-[10px] font-bold text-white/50 tracking-wider uppercase font-mono">BLOCKCHAIN</div>
+                      <div className="text-[11px] sm:text-xs font-bold text-white leading-tight">MONETA CHAIN</div>
                     </div>
                   </div>
                 </button>
@@ -440,19 +440,19 @@ export function Hero() {
                 {/* 4. Security Beacon (Bottom-Left) */}
                 <button
                   onClick={() => setActiveSubsystem('security')}
-                  className={`absolute -bottom-3 sm:bottom-2 -left-2 sm:left-0 p-3 sm:p-3.5 rounded-xl border backdrop-blur-md transition-all duration-300 text-left z-20 shadow-lg ${
+                  className={`absolute -bottom-1 sm:bottom-2 -left-1 sm:left-0 p-2 sm:p-3.5 rounded-xl border backdrop-blur-md transition-all duration-300 text-left z-20 shadow-lg ${
                     activeSubsystem === 'security' 
                       ? 'bg-[#15171A] border-[#3b82f6] ring-2 ring-[#3b82f6]/40 scale-105' 
                       : 'bg-[#15171A]/85 border-white/10 hover:border-white/30'
                   }`}
                 >
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-[#3b82f6]/20 flex items-center justify-center text-[#3b82f6]">
-                      <ShieldCheck className="w-4 h-4" />
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[#3b82f6]/20 flex items-center justify-center text-[#3b82f6] shrink-0">
+                      <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                     <div>
-                      <div className="text-[10px] font-bold text-white/50 tracking-wider uppercase font-mono">SECURITY</div>
-                      <div className="text-xs font-bold text-white">Enterprise Core</div>
+                      <div className="text-[9px] sm:text-[10px] font-bold text-white/50 tracking-wider uppercase font-mono">SECURITY</div>
+                      <div className="text-[11px] sm:text-xs font-bold text-white leading-tight">Enterprise Core</div>
                     </div>
                   </div>
                 </button>
@@ -461,15 +461,15 @@ export function Hero() {
             </div>
 
             {/* Bottom Focused Subsystem Inspection Bar */}
-            <div className="relative z-10 pt-5 mt-4 border-t border-white/10 bg-[#0c0e12]/80 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-5 sm:p-6 rounded-b-2xl">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-2">
+            <div className="relative z-10 pt-4 sm:pt-5 mt-4 border-t border-white/10 bg-[#0c0e12]/80 -mx-5 sm:-mx-7 lg:-mx-8 -mb-5 sm:-mb-7 lg:-mb-8 p-4 sm:p-6 rounded-b-2xl">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3 mb-2">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full" style={{ backgroundColor: subsystemDetails[activeSubsystem].color }} />
-                  <h4 className="text-sm font-black text-white uppercase tracking-wider font-heading">
+                  <h4 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider font-heading">
                     {subsystemDetails[activeSubsystem].title}
                   </h4>
                 </div>
-                <div className="flex items-center gap-3 text-xs font-mono">
+                <div className="flex items-center gap-3 text-[11px] sm:text-xs font-mono">
                   <span className="text-white/60">{subsystemDetails[activeSubsystem].tag}</span>
                   <span className="text-[#2dd4bf] font-bold">{subsystemDetails[activeSubsystem].metric}</span>
                 </div>
@@ -570,7 +570,7 @@ export function Hero() {
             </div>
 
             {/* BLOCK G: Right Column — Primary CTA Block (Mobile order-3) */}
-            <div className="order-3 lg:order-none bg-gradient-to-br from-[#15171A] to-[#202328] border border-white/15 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+            <div className="order-3 lg:order-none bg-gradient-to-br from-[#15171A] to-[#202328] border border-white/15 rounded-2xl p-5 sm:p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#1677FF]/15 rounded-bl-full pointer-events-none" />
 
               <div>
