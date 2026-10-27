@@ -91,7 +91,7 @@ export function Ecosystem() {
   ];
 
   return (
-    <section id="ecosystem" className="py-28 relative bg-[#060b1a] overflow-hidden border-t border-white/5">
+    <section id="ecosystem" className="py-28 relative bg-[#060b1a]/75 backdrop-blur-sm overflow-hidden border-t border-white/5">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-r from-[#3b82f6]/10 via-[#2dd4bf]/10 to-transparent blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#8b5cf6]/10 blur-[100px] pointer-events-none" />

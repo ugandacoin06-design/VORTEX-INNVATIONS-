@@ -21,7 +21,7 @@ export function Objectives() {
   ];
 
   return (
-    <section id="objectives" className="relative w-full bg-[#060b1a] border-t border-white/5 pt-24 pb-32 overflow-hidden">
+    <section id="objectives" className="relative w-full bg-[#060b1a]/75 backdrop-blur-sm border-t border-white/5 pt-24 pb-32 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-[30%] left-[-10%] w-[600px] h-[600px] bg-[#3b82f6]/5 rounded-full blur-[120px] pointer-events-none" />
 

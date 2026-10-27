@@ -118,7 +118,7 @@ export function Values() {
   ];
 
   return (
-    <section id="values" className="relative w-full bg-[#060b1a] border-t border-white/5 pt-24 pb-32 overflow-hidden">
+    <section id="values" className="relative w-full bg-[#060b1a]/75 backdrop-blur-sm border-t border-white/5 pt-24 pb-32 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-[10%] right-[-10%] w-[600px] h-[600px] bg-[#2dd4bf]/5 rounded-full blur-[120px] pointer-events-none" />
 

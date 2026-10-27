@@ -6,7 +6,7 @@ import {
 
 export function Impact() {
   return (
-    <section id="impact" className="relative w-full bg-[#060b1a] border-t border-white/5 pt-24 pb-32 overflow-hidden">
+    <section id="impact" className="relative w-full bg-[#060b1a]/75 backdrop-blur-sm border-t border-white/5 pt-24 pb-32 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-[10%] left-0 w-[600px] h-[600px] bg-[#1e3a8a]/10 rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />
       <div className="absolute bottom-[20%] right-0 w-[500px] h-[500px] bg-[#2dd4bf]/5 rounded-full blur-[100px] pointer-events-none translate-x-1/2" />

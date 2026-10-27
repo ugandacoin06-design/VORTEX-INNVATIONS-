@@ -89,7 +89,7 @@ export function Operations() {
   ];
 
   return (
-    <section id="operations" className="relative w-full bg-[#060b1a] border-t border-white/5 pt-24 pb-32 overflow-hidden">
+    <section id="operations" className="relative w-full bg-[#060b1a]/75 backdrop-blur-sm border-t border-white/5 pt-24 pb-32 overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-[20%] left-[-10%] w-[800px] h-[800px] bg-[#1e3a8a]/5 rounded-full blur-[150px] pointer-events-none" />
 
